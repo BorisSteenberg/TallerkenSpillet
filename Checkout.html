@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout – Platetable</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="checkout-wrapper">
+    <div class="checkout-card">
+
+        <h2>Checkout</h2>
+
+        <div id="product-info" class="checkout-product"></div>
+
+        <form class="checkout-form">
+            <input type="text" placeholder="Fulde navn" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Adresse" required>
+            <input type="text" placeholder="Postnummer og by" required>
+            <button class="btn">Gennemfør betaling</button>
+        </form>
+
+        <p class="demo-text">*Demo checkout – betaling er ikke aktiv.</p>
+
+    </div>
+</section>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
+
+const productInfo = document.getElementById("product-info");
+
+if (product === "pro") {
+    productInfo.innerHTML = "<h3>Platetable Pro</h3><p>Pris: 799 kr.</p>";
+} else {
+    productInfo.innerHTML = "<h3>Platetable Standard</h3><p>Pris: 499 kr.</p>";
+}
+</script>
+
+</body>
+</html>
