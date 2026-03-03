@@ -1,0 +1,134 @@
+/* GENERELT */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #222;
+}
+html { scroll-behavior: smooth; }
+
+/* HEADER */
+.site-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    background: #f8f6f6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.site-header .logo { height: 30px; cursor: pointer; }
+#about-btn {
+    background: none;
+    border: none;
+    color: #181717;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* MODAL */
+.modal-hidden {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+}
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+}
+
+/* HERO */
+.hero {
+    background-image: url(logo.Png);
+    background-size: cover;
+    background-position: center 125%;
+    background-attachment: fixed;
+    color: white;
+    padding: 320px 20px 100px 20px;
+    position: relative;
+    font-size: 30px;
+    padding-bottom: 150px;;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+.hero-content { position: relative; z-index: 1; }
+
+/* PRODUKTER */
+.products { padding: 100px 20px; }
+.product-grid {
+    display: flex; justify-content: center;
+    gap: 40px; flex-wrap: wrap; margin-top: 50px;
+}
+.product-card {
+    width: 450px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    background: white;
+    cursor: pointer;
+}
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+.product-card:hover { background-color: #ff5e62; color: white; }
+.product-card:hover .btn { background: white; color: #ff5e62; }
+.price { display: block; font-size: 22px; font-weight: bold; margin: 15px 0; }
+
+/* KØB NU KNAP */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: #ff5e62;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn:hover { background: white; color: #ff5e62; }
+
+/* FADE IN */
+.fade-in { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    padding: 80px 20px 40px;
+}
+.footer-container {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 60px; max-width: 1100px; margin: auto; text-align: left;
+}
